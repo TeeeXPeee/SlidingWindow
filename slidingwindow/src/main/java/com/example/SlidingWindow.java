@@ -59,4 +59,16 @@ public class SlidingWindow<T> {
     public int getIndex() {
         return index;
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getDataSize() {
+        return dataSize;
+    }
+    
+    public T getValueAt(int index) {
+        return data[index];
+    }
 }
