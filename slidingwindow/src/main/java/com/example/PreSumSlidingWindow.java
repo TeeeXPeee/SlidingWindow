@@ -5,10 +5,20 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
 
     private double sum;
 
+    /**
+     * PreSum Sliding Window Constructor
+     * @param data[] data array
+     * @param width width of the sliding window
+     */
     public PreSumSlidingWindow(T data[], int width) {
         super(data, width);
         sum = computeSum();
     }
+
+    /**
+     * Advance the sliding window by one position
+     * @return boolean indicating if advance was successful
+     */
    @Override
     public boolean advance() {
         boolean advanced = super.advance();
@@ -20,6 +30,11 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
         return advanced;
     }
 
+    /**
+     * Advance the sliding window by {step} number of positions
+     * @param step int number of positions to advance
+     * @return boolean indicating if advance was successful
+     */
     @Override
     public boolean advance(int step) {
         boolean advanced = super.advance(step);
@@ -36,6 +51,10 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
         return advanced;
     }
 
+    /**
+     * Compute the sum of the current window
+     * @return double sum of the current window
+     */
     private double computeSum() {
         T[] windowData = super.data();
         double total = 0;
@@ -45,10 +64,18 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
         return total;
        }
 
+    /**
+     * Compute the average of the current window
+     * @return double average of the current window
+     */
     public double average() {
         return sum / super.getWidth();
     }
 
+    /**
+     * Get the sum of the current window
+     * @return double sum of the current window
+     */
     public double getSum() {
         return sum;
     }
