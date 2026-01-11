@@ -1,7 +1,14 @@
 package com.example;
 
 
-final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T> {
+/** 
+ * PreSum Sliding Window Implementation   
+ * Keeps a running sum of the current window
+ * Uses double precision for sum and average calculations
+ * @author Trevor Price
+ * @version 1.0
+*/
+final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<Number> {
 
     private double sum;
 
@@ -10,7 +17,7 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
      * @param data[] data array
      * @param width width of the sliding window
      */
-    public PreSumSlidingWindow(T data[], int width) {
+    public PreSumSlidingWindow(Number data[], int width) {
         super(data, width);
         sum = computeSum();
     }
@@ -56,9 +63,9 @@ final public class PreSumSlidingWindow<T extends Number> extends SlidingWindow<T
      * @return double sum of the current window
      */
     private double computeSum() {
-        T[] windowData = super.data();
+        Number[] windowData = super.data();
         double total = 0;
-        for(T n : windowData) {
+        for(Number n : windowData) {
             total += n.doubleValue();
         }
         return total;

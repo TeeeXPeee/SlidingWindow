@@ -1,7 +1,14 @@
 package com.example;
 import java.math.BigDecimal;
 
-public class BigDecimalSlidingWindow<T extends Number> extends SlidingWindow { 
+/** 
+ * BigDecimal Sliding Window Implementation   
+ * Keeps a running sum of the current window
+ * BiGDecimal precision for sum and average calculations
+ * @author Trevor Price
+ * @version 1.0
+*/
+public class BigDecimalSlidingWindow<T extends Number> extends SlidingWindow<Number> { 
 
     private BigDecimal sum;
 

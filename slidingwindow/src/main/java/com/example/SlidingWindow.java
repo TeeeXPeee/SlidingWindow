@@ -2,6 +2,12 @@ package com.example;
 
 import java.lang.reflect.Array;
 
+/** 
+ * Generic Sliding Window Implementation 
+ * Allows sliding over an array of generic type T and viewing current window data
+ * @author Trevor Price
+ * @version 1.0
+*/
 public class SlidingWindow<T> {
 
     private T data[];
